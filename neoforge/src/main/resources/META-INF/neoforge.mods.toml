@@ -1,0 +1,36 @@
+modLoader = "javafml"
+loaderVersion = "[2,)"
+#issueTrackerURL = ""
+license = "LGPLv3"
+
+[[mods]]
+modId = "nightlights"
+version = "${version}"
+displayName = "Night Lights"
+authors = "Joosh, samgj15, Flechazo"
+description = '''
+The high version port of Netherite Plus Mod
+Add more netherite items into game.
+'''
+logoFile = "nightlights.png"
+
+[[dependencies.nightlights]]
+modId = "neoforge"
+type = "required"
+versionRange = "[0,)"
+ordering = "NONE"
+side = "BOTH"
+
+[[dependencies.nightlights]]
+modId = "minecraft"
+type = "required"
+versionRange = "[1.21,1.22)"
+ordering = "NONE"
+side = "BOTH"
+
+[[dependencies.nightlights]]
+modId = "architectury"
+type = "required"
+versionRange = "[0,)"
+ordering = "AFTER"
+side = "BOTH"

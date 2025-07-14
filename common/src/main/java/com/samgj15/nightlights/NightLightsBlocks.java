@@ -1,0 +1,125 @@
+package com.samgj15.nightlights;
+
+import com.samgj15.nightlights.blocks.CeilingLightBlock;
+import com.samgj15.nightlights.blocks.NightLightBlock;
+import dev.architectury.registry.registries.RegistrySupplier;
+import net.minecraft.world.level.block.Block;
+import net.minecraft.world.level.block.Blocks;
+import net.minecraft.world.level.block.SoundType;
+
+public class NightLightsBlocks {
+
+    // Night Light Blocks (Frog, Mushroom, Octopus)
+    public static final RegistrySupplier<Block> FROG_BLACK = registerNightLight("frog_black");
+    public static final RegistrySupplier<Block> FROG_BLUE = registerNightLight("frog_blue");
+    public static final RegistrySupplier<Block> FROG_BROWN = registerNightLight("frog_brown");
+    public static final RegistrySupplier<Block> FROG_CYAN = registerNightLight("frog_cyan");
+    public static final RegistrySupplier<Block> FROG_GRAY = registerNightLight("frog_gray");
+    public static final RegistrySupplier<Block> FROG_GREEN = registerNightLight("frog_green");
+    public static final RegistrySupplier<Block> FROG_LIGHT_BLUE = registerNightLight("frog_light_blue");
+    public static final RegistrySupplier<Block> FROG_LIGHT_GRAY = registerNightLight("frog_light_gray");
+    public static final RegistrySupplier<Block> FROG_LIME = registerNightLight("frog_lime");
+    public static final RegistrySupplier<Block> FROG_MAGENTA = registerNightLight("frog_magenta");
+    public static final RegistrySupplier<Block> FROG_ORANGE = registerNightLight("frog_orange");
+    public static final RegistrySupplier<Block> FROG_PINK = registerNightLight("frog_pink");
+    public static final RegistrySupplier<Block> FROG_PURPLE = registerNightLight("frog_purple");
+    public static final RegistrySupplier<Block> FROG_RED = registerNightLight("frog_red");
+    public static final RegistrySupplier<Block> FROG_WHITE = registerNightLight("frog_white");
+    public static final RegistrySupplier<Block> FROG_YELLOW = registerNightLight("frog_yellow");
+
+    public static final RegistrySupplier<Block> MUSHROOM_BLACK = registerNightLight("mushroom_black");
+    public static final RegistrySupplier<Block> MUSHROOM_BLUE = registerNightLight("mushroom_blue");
+    public static final RegistrySupplier<Block> MUSHROOM_BROWN = registerNightLight("mushroom_brown");
+    public static final RegistrySupplier<Block> MUSHROOM_CYAN = registerNightLight("mushroom_cyan");
+    public static final RegistrySupplier<Block> MUSHROOM_GRAY = registerNightLight("mushroom_gray");
+    public static final RegistrySupplier<Block> MUSHROOM_GREEN = registerNightLight("mushroom_green");
+    public static final RegistrySupplier<Block> MUSHROOM_LIGHT_BLUE = registerNightLight("mushroom_light_blue");
+    public static final RegistrySupplier<Block> MUSHROOM_LIGHT_GRAY = registerNightLight("mushroom_light_gray");
+    public static final RegistrySupplier<Block> MUSHROOM_LIME = registerNightLight("mushroom_lime");
+    public static final RegistrySupplier<Block> MUSHROOM_MAGENTA = registerNightLight("mushroom_magenta");
+    public static final RegistrySupplier<Block> MUSHROOM_ORANGE = registerNightLight("mushroom_orange");
+    public static final RegistrySupplier<Block> MUSHROOM_PINK = registerNightLight("mushroom_pink");
+    public static final RegistrySupplier<Block> MUSHROOM_PURPLE = registerNightLight("mushroom_purple");
+    public static final RegistrySupplier<Block> MUSHROOM_RED = registerNightLight("mushroom_red");
+    public static final RegistrySupplier<Block> MUSHROOM_WHITE = registerNightLight("mushroom_white");
+    public static final RegistrySupplier<Block> MUSHROOM_YELLOW = registerNightLight("mushroom_yellow");
+
+    public static final RegistrySupplier<Block> OCTOPUS_BLACK = registerNightLight("octopus_black");
+    public static final RegistrySupplier<Block> OCTOPUS_BLUE = registerNightLight("octopus_blue");
+    public static final RegistrySupplier<Block> OCTOPUS_BROWN = registerNightLight("octopus_brown");
+    public static final RegistrySupplier<Block> OCTOPUS_CYAN = registerNightLight("octopus_cyan");
+    public static final RegistrySupplier<Block> OCTOPUS_GRAY = registerNightLight("octopus_gray");
+    public static final RegistrySupplier<Block> OCTOPUS_GREEN = registerNightLight("octopus_green");
+    public static final RegistrySupplier<Block> OCTOPUS_LIGHT_BLUE = registerNightLight("octopus_light_blue");
+    public static final RegistrySupplier<Block> OCTOPUS_LIGHT_GRAY = registerNightLight("octopus_light_gray");
+    public static final RegistrySupplier<Block> OCTOPUS_LIME = registerNightLight("octopus_lime");
+    public static final RegistrySupplier<Block> OCTOPUS_MAGENTA = registerNightLight("octopus_magenta");
+    public static final RegistrySupplier<Block> OCTOPUS_ORANGE = registerNightLight("octopus_orange");
+    public static final RegistrySupplier<Block> OCTOPUS_PINK = registerNightLight("octopus_pink");
+    public static final RegistrySupplier<Block> OCTOPUS_PURPLE = registerNightLight("octopus_purple");
+    public static final RegistrySupplier<Block> OCTOPUS_RED = registerNightLight("octopus_red");
+    public static final RegistrySupplier<Block> OCTOPUS_WHITE = registerNightLight("octopus_white");
+    public static final RegistrySupplier<Block> OCTOPUS_YELLOW = registerNightLight("octopus_yellow");
+
+    // Hanging Lights
+    public static final RegistrySupplier<Block> HANGING_LIGHTS_BLACK = registerCeilingLight("hanging_lights_black");
+    public static final RegistrySupplier<Block> HANGING_LIGHTS_BLUE = registerCeilingLight("hanging_lights_blue");
+    public static final RegistrySupplier<Block> HANGING_LIGHTS_BROWN = registerCeilingLight("hanging_lights_brown");
+    public static final RegistrySupplier<Block> HANGING_LIGHTS_CYAN = registerCeilingLight("hanging_lights_cyan");
+    public static final RegistrySupplier<Block> HANGING_LIGHTS_DEFAULT = registerCeilingLight("hanging_lights_default");
+    public static final RegistrySupplier<Block> HANGING_LIGHTS_GRAY = registerCeilingLight("hanging_lights_gray");
+    public static final RegistrySupplier<Block> HANGING_LIGHTS_GREEN = registerCeilingLight("hanging_lights_green");
+    public static final RegistrySupplier<Block> HANGING_LIGHTS_LIGHT_BLUE = registerCeilingLight("hanging_lights_light_blue");
+    public static final RegistrySupplier<Block> HANGING_LIGHTS_LIGHT_GRAY = registerCeilingLight("hanging_lights_light_gray");
+    public static final RegistrySupplier<Block> HANGING_LIGHTS_LIME = registerCeilingLight("hanging_lights_lime");
+    public static final RegistrySupplier<Block> HANGING_LIGHTS_MAGENTA = registerCeilingLight("hanging_lights_magenta");
+    public static final RegistrySupplier<Block> HANGING_LIGHTS_ORANGE = registerCeilingLight("hanging_lights_orange");
+    public static final RegistrySupplier<Block> HANGING_LIGHTS_PINK = registerCeilingLight("hanging_lights_pink");
+    public static final RegistrySupplier<Block> HANGING_LIGHTS_PURPLE = registerCeilingLight("hanging_lights_purple");
+    public static final RegistrySupplier<Block> HANGING_LIGHTS_RED = registerCeilingLight("hanging_lights_red");
+    public static final RegistrySupplier<Block> HANGING_LIGHTS_WHITE = registerCeilingLight("hanging_lights_white");
+    public static final RegistrySupplier<Block> HANGING_LIGHTS_YELLOW = registerCeilingLight("hanging_lights_yellow");
+
+    // Fairy Lights
+    public static final RegistrySupplier<Block> FAIRY_LIGHTS_BLACK = registerCeilingLight("fairy_lights_black");
+    public static final RegistrySupplier<Block> FAIRY_LIGHTS_BLUE = registerCeilingLight("fairy_lights_blue");
+    public static final RegistrySupplier<Block> FAIRY_LIGHTS_BROWN = registerCeilingLight("fairy_lights_brown");
+    public static final RegistrySupplier<Block> FAIRY_LIGHTS_CYAN = registerCeilingLight("fairy_lights_cyan");
+    public static final RegistrySupplier<Block> FAIRY_LIGHTS_DEFAULT = registerCeilingLight("fairy_lights_default");
+    public static final RegistrySupplier<Block> FAIRY_LIGHTS_GRAY = registerCeilingLight("fairy_lights_gray");
+    public static final RegistrySupplier<Block> FAIRY_LIGHTS_GREEN = registerCeilingLight("fairy_lights_green");
+    public static final RegistrySupplier<Block> FAIRY_LIGHTS_LIGHT_BLUE = registerCeilingLight("fairy_lights_light_blue");
+    public static final RegistrySupplier<Block> FAIRY_LIGHTS_LIGHT_GRAY = registerCeilingLight("fairy_lights_light_gray");
+    public static final RegistrySupplier<Block> FAIRY_LIGHTS_LIME = registerCeilingLight("fairy_lights_lime");
+    public static final RegistrySupplier<Block> FAIRY_LIGHTS_MAGENTA = registerCeilingLight("fairy_lights_magenta");
+    public static final RegistrySupplier<Block> FAIRY_LIGHTS_ORANGE = registerCeilingLight("fairy_lights_orange");
+    public static final RegistrySupplier<Block> FAIRY_LIGHTS_PINK = registerCeilingLight("fairy_lights_pink");
+    public static final RegistrySupplier<Block> FAIRY_LIGHTS_PURPLE = registerCeilingLight("fairy_lights_purple");
+    public static final RegistrySupplier<Block> FAIRY_LIGHTS_RED = registerCeilingLight("fairy_lights_red");
+    public static final RegistrySupplier<Block> FAIRY_LIGHTS_WHITE = registerCeilingLight("fairy_lights_white");
+    public static final RegistrySupplier<Block> FAIRY_LIGHTS_YELLOW = registerCeilingLight("fairy_lights_yellow");
+
+    private static RegistrySupplier<Block> registerNightLight(String name) {
+        return NightLights.BLOCKS.register(name, () -> new NightLightBlock(
+                Block.Properties.ofFullCopy(Blocks.FLOWER_POT)
+                        .noOcclusion()
+                        .lightLevel(state -> state.getValue(NightLightBlock.CLICKED) ? 8 : 0)
+                        .sound(SoundType.GLASS)
+        ));
+    }
+
+    private static RegistrySupplier<Block> registerCeilingLight(String name) {
+        return NightLights.BLOCKS.register(name, () -> new CeilingLightBlock(
+                Block.Properties.ofFullCopy(Blocks.FLOWER_POT)
+                        .noOcclusion()
+                        .noCollission()
+                        .instabreak()
+                        .lightLevel(state -> 6)
+        ));
+    }
+
+    public static void init() {
+        // This method is called to trigger static initialization
+        NightLights.LOGGER.info("Registering blocks");
+    }
+}

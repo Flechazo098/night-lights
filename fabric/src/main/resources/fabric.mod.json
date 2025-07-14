@@ -1,0 +1,43 @@
+{
+  "schemaVersion": 1,
+  "id": "nightlights",
+  "version": "${version}",
+
+  "name": "Night Lights",
+  "description": "This is a nightlights mod.",
+  "authors": [
+    "samgj15",
+    "Joosh",
+    "Flechazo"
+  ],
+  "contact": {
+    "homepage": "https://github.com/bonsaistudi0s/night-lights",
+    "sources": "https://github.com/bonsaistudi0s/night-lights"
+  },
+
+  "license": "LGPLv3",
+  "icon": "nightlights.png",
+
+  "environment": "*",
+  "entrypoints": {
+    "main": [
+      "com.samgj15.nightlights.fabric.NightLightsFabric"
+    ],
+    "client": [
+      "com.samgj15.nightlights.fabric.NightLightsFabricClient"
+    ]
+  },
+  "mixins": [
+    "nightlights.mixins.json"
+  ],
+
+  "depends": {
+    "fabricloader": "*",
+    "minecraft": "~1.21",
+    "architectury": "*",
+    "fabric-api": "*"
+  },
+  "conflicts": {
+    "immediatelyfast" : "*"
+  }
+}
