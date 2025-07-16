@@ -30,7 +30,7 @@ dependencies {
 
     // Architectury API. This is optional, and you can comment it out if you don't need it.
     modImplementation "dev.architectury:architectury-neoforge:$rootProject.architectury_api_version"
-    modRuntimeOnly "me.shedaniel:RoughlyEnoughItems-neoforge:$project.rei_version"
+    modRuntimeOnly("mezz.jei:jei-$project.minecraft_version-neoforge:$project.jei_version")
 
     common(project(path: ':common', configuration: 'namedElements')) { transitive false }
     shadowBundle project(path: ':common', configuration: 'transformProductionNeoForge')
