@@ -12,12 +12,11 @@ import net.minecraft.world.level.block.state.properties.EnumProperty;
 import net.minecraft.world.phys.shapes.CollisionContext;
 import net.minecraft.world.phys.shapes.VoxelShape;
 
-public class NightLightBlock extends AbstractLightBlock {
+public abstract class AbstractNightLightBlock extends AbstractLightBlock {
     public static final EnumProperty<Direction> FACING = EnumProperty.create("facing", Direction.class, Direction.NORTH, Direction.SOUTH, Direction.WEST, Direction.EAST);
-    private static final VoxelShape SHAPE = Block.box(3, 0, 3, 13, 6, 13);
     private static final int[] BRIGHTNESS_LEVELS = {0, 8, 13};
 
-    public NightLightBlock(Properties properties) {
+    public AbstractNightLightBlock(Properties properties) {
         super(properties);
         this.registerDefaultState(this.stateDefinition.any()
                 .setValue(LIT, true)
@@ -46,7 +45,7 @@ public class NightLightBlock extends AbstractLightBlock {
 
     @Override
     protected VoxelShape getShape(BlockState state, BlockGetter level, BlockPos pos, CollisionContext context) {
-        return SHAPE;
+        return getShapeForType();
     }
 
     @Override
@@ -63,4 +62,6 @@ public class NightLightBlock extends AbstractLightBlock {
     protected int[] getBrightnessLevels() {
         return BRIGHTNESS_LEVELS;
     }
+
+    protected abstract VoxelShape getShapeForType();
 }
