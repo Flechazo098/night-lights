@@ -1,5 +1,6 @@
 package com.samgj15.nightlights;
 
+import com.samgj15.nightlights.items.WearableBlockItem;
 import com.samgj15.nightlights.platform.PlatformHelper;
 import dev.architectury.registry.registries.RegistrySupplier;
 import net.minecraft.core.registries.Registries;
@@ -101,7 +102,7 @@ public class NightLightsItems {
     public static final RegistrySupplier<Item> FAIRY_LIGHTS_YELLOW = registerBlockItem("fairy_lights_yellow", NightLightsBlocks.FAIRY_LIGHTS_YELLOW);
 
     private static RegistrySupplier<Item> registerWearableBlockItem(String name, RegistrySupplier<net.minecraft.world.level.block.Block> block) {
-        return NightLights.ITEMS.register(name, () -> PlatformHelper.createWearableBlockItem(
+        return NightLights.ITEMS.register(name, () -> new WearableBlockItem(
                 block.get(),
                 new Item.Properties().setId(ResourceKey.create(
                         Registries.ITEM,
