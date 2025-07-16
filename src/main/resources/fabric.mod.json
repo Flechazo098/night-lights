@@ -18,7 +18,6 @@
     ]
   },
   "mixins": [
-    "nightlights.mixins.json"
   ],
   "depends": {
     "fabricloader": ">=${loader_version}",
