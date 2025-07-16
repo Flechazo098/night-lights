@@ -1,11 +1,10 @@
 {
   "required": true,
   "minVersion": "0.8",
-  "package": "com.samgj15.nightlights.fabric.mixins",
+  "package": "",
   "compatibilityLevel": "JAVA_21",
   "refmap": "nightlights-fabric-fabric-refmap.json",
   "mixins": [
-    "LivingEntityMixin"
   ],
   "client": [],
   "injectors": {

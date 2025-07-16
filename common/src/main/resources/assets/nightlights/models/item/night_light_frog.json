@@ -1,4 +1,8 @@
 {
+  "textures": {
+    "2": "item/apple",
+    "particle": "item/apple"
+  },
   "elements": [
     {
       "from": [
