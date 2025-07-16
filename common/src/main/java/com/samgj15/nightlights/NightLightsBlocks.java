@@ -1,7 +1,9 @@
 package com.samgj15.nightlights;
 
 import com.samgj15.nightlights.blocks.CeilingLightBlock;
-import com.samgj15.nightlights.blocks.NightLightBlock;
+import com.samgj15.nightlights.blocks.NightLightFrogBlock;
+import com.samgj15.nightlights.blocks.NightLightMushroomBlock;
+import com.samgj15.nightlights.blocks.NightLightOctopusBlock;
 import dev.architectury.registry.registries.RegistrySupplier;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.resources.ResourceKey;
@@ -104,7 +106,38 @@ public class NightLightsBlocks {
     public static final RegistrySupplier<Block> FAIRY_LIGHTS_YELLOW = registerCeilingLight("fairy_lights_yellow");
 
     private static RegistrySupplier<Block> registerNightLight(String name) {
-        return NightLights.BLOCKS.register(name, () -> new NightLightBlock(
+        if (name.startsWith("frog_")) {
+            return NightLights.BLOCKS.register(name, () -> new NightLightFrogBlock(
+                    Block.Properties.ofFullCopy(Blocks.FLOWER_POT)
+                            .noOcclusion()
+                            .sound(SoundType.GLASS)
+                            .setId(ResourceKey.create(
+                                    Registries.BLOCK,
+                                    ResourceLocation.parse(NightLights.MOD_ID + ":" + name)
+                            ))
+            ));
+        } else if (name.startsWith("mushroom_")) {
+            return NightLights.BLOCKS.register(name, () -> new NightLightMushroomBlock(
+                    Block.Properties.ofFullCopy(Blocks.FLOWER_POT)
+                            .noOcclusion()
+                            .sound(SoundType.GLASS)
+                            .setId(ResourceKey.create(
+                                    Registries.BLOCK,
+                                    ResourceLocation.parse(NightLights.MOD_ID + ":" + name)
+                            ))
+            ));
+        } else if (name.startsWith("octopus_")) {
+            return NightLights.BLOCKS.register(name, () -> new NightLightOctopusBlock(
+                    Block.Properties.ofFullCopy(Blocks.FLOWER_POT)
+                            .noOcclusion()
+                            .sound(SoundType.GLASS)
+                            .setId(ResourceKey.create(
+                                    Registries.BLOCK,
+                                    ResourceLocation.parse(NightLights.MOD_ID + ":" + name)
+                            ))
+            ));
+        }
+        return NightLights.BLOCKS.register(name, () -> new NightLightFrogBlock(
                 Block.Properties.ofFullCopy(Blocks.FLOWER_POT)
                         .noOcclusion()
                         .sound(SoundType.GLASS)
