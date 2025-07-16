@@ -1,7 +1,9 @@
 package com.samgj15.nightlights;
 
 import com.samgj15.nightlights.blocks.CeilingLightBlock;
-import com.samgj15.nightlights.blocks.NightLightBlock;
+import com.samgj15.nightlights.blocks.NightLightFrogBlock;
+import com.samgj15.nightlights.blocks.NightLightMushroomBlock;
+import com.samgj15.nightlights.blocks.NightLightOctopusBlock;
 import dev.architectury.registry.registries.RegistrySupplier;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.Blocks;
@@ -100,13 +102,31 @@ public class NightLightsBlocks {
     public static final RegistrySupplier<Block> FAIRY_LIGHTS_YELLOW = registerCeilingLight("fairy_lights_yellow");
 
     private static RegistrySupplier<Block> registerNightLight(String name) {
-        return NightLights.BLOCKS.register(name, () -> new NightLightBlock(
+        if (name.startsWith("frog_")) {
+            return NightLights.BLOCKS.register(name, () -> new NightLightFrogBlock(
+                    Block.Properties.ofFullCopy(Blocks.FLOWER_POT)
+                            .noOcclusion()
+                            .sound(SoundType.GLASS))
+            );
+        } else if (name.startsWith("mushroom_")) {
+            return NightLights.BLOCKS.register(name, () -> new NightLightMushroomBlock(
+                    Block.Properties.ofFullCopy(Blocks.FLOWER_POT)
+                            .noOcclusion()
+                            .sound(SoundType.GLASS))
+            );
+        } else if (name.startsWith("octopus_")) {
+            return NightLights.BLOCKS.register(name, () -> new NightLightOctopusBlock(
+                    Block.Properties.ofFullCopy(Blocks.FLOWER_POT)
+                            .noOcclusion()
+                            .sound(SoundType.GLASS))
+            );
+        }
+        return NightLights.BLOCKS.register(name, () -> new NightLightFrogBlock(
                 Block.Properties.ofFullCopy(Blocks.FLOWER_POT)
                         .noOcclusion()
-                        .sound(SoundType.GLASS)
-        ));
+                        .sound(SoundType.GLASS))
+        );
     }
-
     private static RegistrySupplier<Block> registerCeilingLight(String name) {
         return NightLights.BLOCKS.register(name, () -> new CeilingLightBlock(
                 Block.Properties.ofFullCopy(Blocks.FLOWER_POT)
