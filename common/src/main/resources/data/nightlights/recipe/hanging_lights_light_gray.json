@@ -1,12 +1,8 @@
 {
     "type": "minecraft:crafting_shapeless",
     "ingredients": [
-        {
-            "tag": "nightlights:hanging_lights"
-        },
-        {
-            "item": "minecraft:light_gray_dye"
-        }
+        "#nightlights:hanging_lights",
+        "#c:dyes/light_gray"
     ],
     "result": {
         "id": "nightlights:hanging_lights_light_gray"

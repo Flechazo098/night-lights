@@ -18,16 +18,19 @@ public class NightLights {
     public static final DeferredRegister<CreativeModeTab> CREATIVE_TABS = DeferredRegister.create(MOD_ID, Registries.CREATIVE_MODE_TAB);
 
     public static void init() {
-        LOGGER.info("Initializing Night Lights mod");
+        LOGGER.info("Initializing Night Lights");
 
-        // Register all deferred registers
+        // 注册 DeferredRegister
         BLOCKS.register();
         ITEMS.register();
         CREATIVE_TABS.register();
 
-        // Initialize blocks, items and creative tab
+        // 注册方块
         NightLightsBlocks.init();
+
+        // 注册物品
         NightLightsItems.init();
+
         NightLightsCreativeTab.init();
     }
 
@@ -35,4 +38,5 @@ public class NightLights {
         LOGGER.info("Initializing Night Lights client");
         NightLightsClient.init();
     }
+
 }

@@ -3,11 +3,15 @@ package com.samgj15.nightlights;
 import com.samgj15.nightlights.blocks.CeilingLightBlock;
 import com.samgj15.nightlights.blocks.NightLightBlock;
 import dev.architectury.registry.registries.RegistrySupplier;
+import net.minecraft.core.registries.Registries;
+import net.minecraft.resources.ResourceKey;
+import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.SoundType;
 
 public class NightLightsBlocks {
+
 
     // Night Light Blocks (Frog, Mushroom, Octopus)
     public static final RegistrySupplier<Block> FROG_BLACK = registerNightLight("frog_black");
@@ -103,8 +107,11 @@ public class NightLightsBlocks {
         return NightLights.BLOCKS.register(name, () -> new NightLightBlock(
                 Block.Properties.ofFullCopy(Blocks.FLOWER_POT)
                         .noOcclusion()
-                        .lightLevel(state -> state.getValue(NightLightBlock.CLICKED) ? 8 : 0)
                         .sound(SoundType.GLASS)
+                        .setId(ResourceKey.create(
+                                Registries.BLOCK,
+                                ResourceLocation.parse(NightLights.MOD_ID + ":" + name)
+                        ))
         ));
     }
 
@@ -114,9 +121,13 @@ public class NightLightsBlocks {
                         .noOcclusion()
                         .noCollission()
                         .instabreak()
-                        .lightLevel(state -> 6)
+                        .setId(ResourceKey.create(
+                                Registries.BLOCK,
+                                ResourceLocation.parse(NightLights.MOD_ID + ":" + name)
+                        ))
         ));
     }
+
 
     public static void init() {
         // This method is called to trigger static initialization

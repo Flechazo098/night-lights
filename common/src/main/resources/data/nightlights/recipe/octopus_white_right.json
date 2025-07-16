@@ -6,24 +6,12 @@
         "RBR"
     ],
     "key": {
-        "#": {
-            "tag": "minecraft:buttons"
-        },
-        "I": {
-            "item": "minecraft:ink_sac"
-        },
-        "G": {
-            "item": "minecraft:glass"
-        },
-        "N": {
-            "item": "minecraft:glowstone_dust"
-        },
-        "R": {
-            "item": "minecraft:redstone"
-        },
-        "B": {
-            "item": "minecraft:white_dye"
-        }
+        "#": "#minecraft:buttons",
+        "I": "minecraft:ink_sac",
+        "G": "minecraft:glass",
+        "N": "minecraft:glowstone_dust",
+        "R": "minecraft:redstone",
+        "B": "#c:dyes/white"
     },
     "result": {
         "id": "nightlights:octopus_white"

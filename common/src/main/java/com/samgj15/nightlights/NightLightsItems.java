@@ -2,6 +2,9 @@ package com.samgj15.nightlights;
 
 import com.samgj15.nightlights.platform.PlatformHelper;
 import dev.architectury.registry.registries.RegistrySupplier;
+import net.minecraft.core.registries.Registries;
+import net.minecraft.resources.ResourceKey;
+import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.Item;
 
@@ -98,11 +101,23 @@ public class NightLightsItems {
     public static final RegistrySupplier<Item> FAIRY_LIGHTS_YELLOW = registerBlockItem("fairy_lights_yellow", NightLightsBlocks.FAIRY_LIGHTS_YELLOW);
 
     private static RegistrySupplier<Item> registerWearableBlockItem(String name, RegistrySupplier<net.minecraft.world.level.block.Block> block) {
-        return NightLights.ITEMS.register(name, () -> PlatformHelper.createWearableBlockItem(block.get(), new Item.Properties()));
+        return NightLights.ITEMS.register(name, () -> PlatformHelper.createWearableBlockItem(
+                block.get(),
+                new Item.Properties().setId(ResourceKey.create(
+                        Registries.ITEM,
+                        ResourceLocation.parse(NightLights.MOD_ID + ":" + name)
+                ))
+        ));
     }
 
     private static RegistrySupplier<Item> registerBlockItem(String name, RegistrySupplier<net.minecraft.world.level.block.Block> block) {
-        return NightLights.ITEMS.register(name, () -> new BlockItem(block.get(), new Item.Properties()));
+        return NightLights.ITEMS.register(name, () -> new BlockItem(
+                block.get(),
+                new Item.Properties().setId(ResourceKey.create(
+                        Registries.ITEM,
+                        ResourceLocation.parse(NightLights.MOD_ID + ":" + name)
+                ))
+        ));
     }
 
     public static void init() {

@@ -1,12 +1,8 @@
 {
     "type": "minecraft:crafting_shapeless",
     "ingredients": [
-        {
-            "tag": "nightlights:fairy_lights"
-        },
-        {
-            "item": "minecraft:cyan_dye"
-        }
+        "#nightlights:fairy_lights",
+        "#c:dyes/cyan"
     ],
     "result": {
         "id": "nightlights:fairy_lights_cyan"

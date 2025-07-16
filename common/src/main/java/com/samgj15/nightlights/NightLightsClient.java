@@ -5,7 +5,9 @@ import com.samgj15.nightlights.platform.PlatformHelper;
 public class NightLightsClient {
 
     public static void init() {
+
         NightLights.LOGGER.info("Initializing Night Lights client");
+
 
         // Set render layers for blocks that need cutout rendering
         // Only set for Fabric - NeoForge uses JSON configuration
