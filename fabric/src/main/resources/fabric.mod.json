@@ -27,9 +27,6 @@
       "com.samgj15.nightlights.fabric.NightLightsFabricClient"
     ]
   },
-  "mixins": [
-    "nightlights.mixins.json"
-  ],
 
   "depends": {
     "fabricloader": "*",
