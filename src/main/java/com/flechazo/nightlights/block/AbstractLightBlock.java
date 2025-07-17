@@ -68,6 +68,7 @@ public abstract class AbstractLightBlock extends Block {
             }
         }
     }
+
     protected void handleFixedLightInteraction(BlockState state, Level level, BlockPos pos) {
         boolean isLit = state.getValue(LIT);
 

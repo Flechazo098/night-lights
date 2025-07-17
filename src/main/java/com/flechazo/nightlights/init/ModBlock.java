@@ -6,7 +6,6 @@ import com.flechazo.nightlights.block.NightLightFrogBlock;
 import com.flechazo.nightlights.block.NightLightMushroomBlock;
 import com.flechazo.nightlights.block.NightLightOctopusBlock;
 import com.flechazo.nightlights.util.RegisterHelper;
-import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.resources.ResourceKey;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.Blocks;
