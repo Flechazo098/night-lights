@@ -10,8 +10,8 @@ import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
 public class NightLights {
     public static final String MODID = "nightlights";
 
-    public NightLights() {
-        var modEventBus = FMLJavaModLoadingContext.get().getModEventBus();
+    public NightLights(FMLJavaModLoadingContext context) {
+        var modEventBus = context.getModBusGroup();
         // Register DeferredRegisters to the mod event bus
         ModBlock.BLOCKS.register(modEventBus);
         ModItem.ITEMS.register(modEventBus);
