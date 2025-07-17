@@ -105,10 +105,10 @@ public class ModItem {
     public static final Supplier<Item> FAIRY_LIGHTS_YELLOW = registerBlockItem("fairy_lights_yellow", ModBlock.FAIRY_LIGHTS_YELLOW);
 
     private static Supplier<Item> registerWearableBlockItem(String name, Supplier<? extends Block> blockSupplier) {
-        return ITEMS.register(name, () -> new WearableBlockItem(blockSupplier.get(), new Item.Properties().setId(RegisterHelper.itemKey(name))));
+        return ITEMS.register(name, () -> new WearableBlockItem(blockSupplier.get(), new Item.Properties()));
     }
 
     private static Supplier<Item> registerBlockItem(String name, Supplier<? extends Block> blockSupplier) {
-        return ITEMS.register(name, () -> new BlockItem(blockSupplier.get(), new Item.Properties().setId(RegisterHelper.itemKey(name))));
+        return ITEMS.register(name, () -> new BlockItem(blockSupplier.get(), new Item.Properties()));
     }
 }

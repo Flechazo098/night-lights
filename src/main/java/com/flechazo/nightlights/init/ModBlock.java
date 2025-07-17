@@ -115,8 +115,7 @@ public class ModBlock {
         return BLOCKS.register(name, () -> {
             BlockBehaviour.Properties properties = BlockBehaviour.Properties.ofFullCopy(Blocks.FLOWER_POT)
                     .noOcclusion()
-                    .sound(SoundType.GLASS)
-                    .setId(blockKey);
+                    .sound(SoundType.GLASS);
 
             return switch (type) {
                 case "mushroom" -> new NightLightMushroomBlock(properties);
@@ -134,7 +133,6 @@ public class ModBlock {
                         .sound(SoundType.GLASS)
                         .noCollission()
                         .instabreak()
-                        .setId(blockKey)
         ));
     }
 }

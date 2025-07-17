@@ -1,8 +1,12 @@
 {
     "type": "minecraft:crafting_shapeless",
     "ingredients": [
-        "#nightlights:hanging_lights",
-        "#c:dyes/cyan"
+        {
+            "tag": "nightlights:hanging_lights"
+        },
+        {
+            "item": "minecraft:cyan_dye"
+        }
     ],
     "result": {
         "id": "nightlights:hanging_lights_cyan"

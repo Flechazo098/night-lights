@@ -3,7 +3,6 @@ package com.flechazo.nightlights;
 import com.flechazo.nightlights.init.ModBlock;
 import com.flechazo.nightlights.init.ModCreativeTab;
 import com.flechazo.nightlights.init.ModItem;
-import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
 

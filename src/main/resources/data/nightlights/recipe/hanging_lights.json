@@ -6,8 +6,12 @@
         "III"
     ],
     "key": {
-        "#": "minecraft:string",
-        "I": "minecraft:glowstone_dust"
+        "#": {
+            "item": "minecraft:string"
+        },
+        "I": {
+            "item": "minecraft:glowstone_dust"
+        }
     },
     "result": {
         "id": "nightlights:hanging_lights_default"

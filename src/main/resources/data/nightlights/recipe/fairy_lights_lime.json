@@ -1,8 +1,12 @@
 {
     "type": "minecraft:crafting_shapeless",
     "ingredients": [
-        "#nightlights:fairy_lights",
-        "#c:dyes/lime"
+        {
+            "tag": "nightlights:fairy_lights"
+        },
+        {
+            "item": "minecraft:lime_dye"
+        }
     ],
     "result": {
         "id": "nightlights:fairy_lights_lime"
