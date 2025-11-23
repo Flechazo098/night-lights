@@ -4,9 +4,13 @@
   "version": "${version}",
   "name": "Night Lights",
   "description": "",
-  "authors": [],
+  "authors": [
+    "samgj15",
+    "Joosh",
+    "Flechazo"
+  ],
   "contact": {},
-  "license": "MIT",
+  "license": "LGPLv3",
   "icon": "nightlights.png",
   "environment": "*",
   "entrypoints": {
