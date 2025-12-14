@@ -12,6 +12,7 @@ import net.minecraft.world.level.block.state.properties.EnumProperty;
 import net.minecraft.world.phys.shapes.CollisionContext;
 import net.minecraft.world.phys.shapes.VoxelShape;
 import org.jetbrains.annotations.NotNull;
+import org.jspecify.annotations.NonNull;
 
 public abstract class AbstractNightLightBlock extends AbstractLightBlock {
     public static final EnumProperty<Direction> FACING = EnumProperty.create("facing", Direction.class, Direction.NORTH, Direction.SOUTH, Direction.WEST, Direction.EAST);
@@ -26,7 +27,7 @@ public abstract class AbstractNightLightBlock extends AbstractLightBlock {
     }
 
     @Override
-    protected boolean canSurvive(BlockState state, LevelReader level, BlockPos pos) {
+    protected boolean canSurvive(@NonNull BlockState state, @NonNull LevelReader level, BlockPos pos) {
         BlockPos below = pos.below();
         return canSupportRigidBlock(level, below) || canSupportCenter(level, below, Direction.UP);
     }
@@ -46,7 +47,7 @@ public abstract class AbstractNightLightBlock extends AbstractLightBlock {
 
     @Override
     @NotNull
-    protected VoxelShape getShape(BlockState state, BlockGetter level, BlockPos pos, CollisionContext context) {
+    protected VoxelShape getShape(@NonNull BlockState state, @NonNull BlockGetter level, @NonNull BlockPos pos, @NonNull CollisionContext context) {
         return getShapeForType();
     }
 

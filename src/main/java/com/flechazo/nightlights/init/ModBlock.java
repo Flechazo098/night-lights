@@ -1,6 +1,5 @@
 package com.flechazo.nightlights.init;
 
-import com.flechazo.nightlights.NightLights;
 import com.flechazo.nightlights.block.CeilingLightBlock;
 import com.flechazo.nightlights.block.NightLightFrogBlock;
 import com.flechazo.nightlights.block.NightLightMushroomBlock;
@@ -8,9 +7,7 @@ import com.flechazo.nightlights.block.NightLightOctopusBlock;
 import com.flechazo.nightlights.util.RegisterHelper;
 import net.minecraft.core.Registry;
 import net.minecraft.core.registries.BuiltInRegistries;
-import net.minecraft.core.registries.Registries;
 import net.minecraft.resources.ResourceKey;
-import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.SoundType;
@@ -159,6 +156,7 @@ public class ModBlock {
 
         return Registry.register(BuiltInRegistries.BLOCK, RegisterHelper.id(name), block);
     }
+
     public static void init() {
     }
 }

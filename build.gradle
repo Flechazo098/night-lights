@@ -1,5 +1,5 @@
 plugins {
-    id 'fabric-loom' version '1.13.6'
+    id 'fabric-loom' version '1.14-SNAPSHOT'
     id 'maven-publish'
 }
 
@@ -12,11 +12,14 @@ base {
 
 
 repositories {
-    // Add repositories to retrieve artifacts from in here.
-    // You should only use this when depending on other mods because
-    // Loom adds the essential maven repositories to download Minecraft and libraries from automatically.
-    // See https://docs.gradle.org/current/userguide/declaring_repositories.html
-    // for more information about repositories.
+    maven {
+        // Add curse maven to repositories
+        name = "Curse Maven"
+        url = "https://www.cursemaven.com"
+        content {
+            includeGroup "curse.maven"
+        }
+    }
 }
 
 dependencies {
@@ -26,6 +29,13 @@ dependencies {
     modImplementation "net.fabricmc:fabric-loader:${project.loader_version}"
 
     modImplementation "net.fabricmc.fabric-api:fabric-api:${project.fabric_version}"
+    modImplementation "curse.maven:sodium-394468:7312339"
+    modImplementation "curse.maven:irisshaders-455508:7322505"
+    modImplementation "curse.maven:sodium-extra-447673:7314046"
+
+    implementation files("libs/antlr4-runtime-4.13.1.jar")
+    implementation files("libs/glsl-transformer-3.0.0-pre3.jar")
+    implementation files("libs/jcpp-1.4.14.jar")
 }
 
 processResources {

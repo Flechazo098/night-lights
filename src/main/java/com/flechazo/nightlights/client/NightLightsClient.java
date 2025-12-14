@@ -11,6 +11,7 @@ public class NightLightsClient implements ClientModInitializer {
     public void onInitializeClient() {
         setRenderLayers();
     }
+
     private static void setRenderLayers() {
         // Night Light Blocks
         BlockRenderLayerMap.putBlock(ModBlock.FROG_BLACK, ChunkSectionLayer.CUTOUT);

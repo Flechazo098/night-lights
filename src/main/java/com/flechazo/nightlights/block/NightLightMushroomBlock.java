@@ -2,6 +2,7 @@ package com.flechazo.nightlights.block;
 
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.phys.shapes.VoxelShape;
+
 public class NightLightMushroomBlock extends AbstractNightLightBlock {
     private static final VoxelShape SHAPE = Block.box(3, 0, 3, 13, 9, 13);
 
