@@ -131,7 +131,7 @@ public class ModBlock {
                 BlockBehaviour.Properties.ofFullCopy(Blocks.FLOWER_POT)
                         .noOcclusion()
                         .sound(SoundType.GLASS)
-                        .noCollission()
+                        .noCollision()
                         .instabreak()
                         .setId(blockKey)
         ));
