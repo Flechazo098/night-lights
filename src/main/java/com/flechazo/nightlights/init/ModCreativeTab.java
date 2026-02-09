@@ -1,7 +1,7 @@
 package com.flechazo.nightlights.init;
 
 import com.flechazo.nightlights.NightLights;
-import net.fabricmc.fabric.api.itemgroup.v1.FabricItemGroup;
+import net.fabricmc.fabric.api.creativetab.v1.FabricCreativeModeTab;
 import net.minecraft.core.Registry;
 import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.network.chat.Component;
@@ -13,7 +13,7 @@ public class ModCreativeTab {
     public static CreativeModeTab NIGHT_LIGHTS_TAB;
 
     public static void register() {
-        NIGHT_LIGHTS_TAB = register(FabricItemGroup.builder()
+        NIGHT_LIGHTS_TAB = register(FabricCreativeModeTab.builder()
                 .title(Component.translatable("itemGroup.nightlights"))
                 .icon(() -> new ItemStack(ModItem.FROG_RED))
                 .displayItems((parameters, output) -> {
