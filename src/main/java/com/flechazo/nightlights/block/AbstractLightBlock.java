@@ -11,7 +11,8 @@ import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.block.state.properties.BooleanProperty;
 import net.minecraft.world.level.block.state.properties.IntegerProperty;
 import net.minecraft.world.phys.BlockHitResult;
-import org.jetbrains.annotations.NotNull;
+import org.jspecify.annotations.NonNull;
+
 public abstract class AbstractLightBlock extends Block {
     public static final IntegerProperty BRIGHTNESS = IntegerProperty.create("brightness", 0, 15);
     public static final BooleanProperty LIT = BooleanProperty.create("lit");
@@ -23,8 +24,8 @@ public abstract class AbstractLightBlock extends Block {
     }
 
     @Override
-    @NotNull
-    protected InteractionResult useWithoutItem(BlockState state, Level level, BlockPos pos, Player player, BlockHitResult hitResult) {
+    @NonNull
+    protected InteractionResult useWithoutItem(@NonNull BlockState state, Level level, @NonNull BlockPos pos, @NonNull Player player, @NonNull BlockHitResult hitResult) {
         if (!level.isClientSide()) {
             if (isAdjustable()) {
                 handleLightInteraction(state, level, pos);
@@ -67,6 +68,7 @@ public abstract class AbstractLightBlock extends Block {
             }
         }
     }
+
     protected void handleFixedLightInteraction(BlockState state, Level level, BlockPos pos) {
         boolean isLit = state.getValue(LIT);
 

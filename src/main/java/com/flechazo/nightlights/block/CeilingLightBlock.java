@@ -8,7 +8,10 @@ import net.minecraft.util.RandomSource;
 import net.minecraft.world.InteractionResult;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.context.BlockPlaceContext;
-import net.minecraft.world.level.*;
+import net.minecraft.world.level.BlockGetter;
+import net.minecraft.world.level.Level;
+import net.minecraft.world.level.LevelReader;
+import net.minecraft.world.level.ScheduledTickAccess;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.Rotation;
@@ -18,7 +21,7 @@ import net.minecraft.world.level.block.state.properties.EnumProperty;
 import net.minecraft.world.phys.BlockHitResult;
 import net.minecraft.world.phys.shapes.CollisionContext;
 import net.minecraft.world.phys.shapes.VoxelShape;
-import org.jetbrains.annotations.NotNull;
+import org.jspecify.annotations.NonNull;
 
 import java.util.Map;
 
@@ -41,13 +44,13 @@ public class CeilingLightBlock extends AbstractLightBlock {
     }
 
     @Override
-    @NotNull
-    protected VoxelShape getShape(BlockState state, BlockGetter level, BlockPos pos, CollisionContext context) {
+    @NonNull
+    protected VoxelShape getShape(BlockState state, @NonNull BlockGetter level, BlockPos pos, CollisionContext context) {
         return SHAPES.get(state.getValue(FACING));
     }
 
     @Override
-    protected boolean canSurvive(BlockState state, LevelReader level, BlockPos pos) {
+    protected boolean canSurvive(@NonNull BlockState state, LevelReader level, BlockPos pos) {
         BlockPos above = pos.above();
         return canSupportRigidBlock(level, above) ||
                 (canSupportCenter(level, above, Direction.DOWN) && !level.isEmptyBlock(above));
@@ -62,20 +65,20 @@ public class CeilingLightBlock extends AbstractLightBlock {
     }
 
     @Override
-    @NotNull
-    protected InteractionResult useWithoutItem(BlockState state, Level level, BlockPos pos, Player player, BlockHitResult hitResult) {
+    @NonNull
+    protected InteractionResult useWithoutItem(@NonNull BlockState state, Level level, @NonNull BlockPos pos, @NonNull Player player, @NonNull BlockHitResult hitResult) {
         return InteractionResult.SUCCESS;
     }
 
     @Override
-    @NotNull
+    @NonNull
     protected BlockState updateShape(BlockState state, LevelReader level, ScheduledTickAccess scheduledTickAccess, BlockPos pos, Direction direction, BlockPos neighborPos, BlockState neighborState, RandomSource random) {
         return !state.canSurvive(level, pos) ? Blocks.AIR.defaultBlockState() :
                 super.updateShape(state, level, scheduledTickAccess, pos, direction, neighborPos, neighborState, random);
     }
 
     @Override
-    @NotNull
+    @NonNull
     protected BlockState rotate(BlockState state, Rotation rotation) {
         return state.setValue(FACING, rotation.rotate(state.getValue(FACING)));
     }
@@ -91,8 +94,7 @@ public class CeilingLightBlock extends AbstractLightBlock {
     }
 
     @Override
-    @NotNull
     protected boolean isAdjustable() {
-        return false;
+        return super.isAdjustable();
     }
 }

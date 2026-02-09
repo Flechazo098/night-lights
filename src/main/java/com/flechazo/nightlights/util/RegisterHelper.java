@@ -2,14 +2,14 @@ package com.flechazo.nightlights.util;
 
 import com.flechazo.nightlights.NightLights;
 import net.minecraft.core.registries.Registries;
+import net.minecraft.resources.Identifier;
 import net.minecraft.resources.ResourceKey;
-import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.level.block.Block;
 
 public class RegisterHelper {
-    public static ResourceLocation id(String name) {
-        return ResourceLocation.fromNamespaceAndPath(NightLights.MODID, name);
+    public static Identifier id(String name) {
+        return Identifier.fromNamespaceAndPath(NightLights.MODID, name);
     }
 
     public static ResourceKey<Block> blockKey(String name) {
