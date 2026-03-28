@@ -11,6 +11,7 @@ import net.minecraft.world.item.ItemStack;
 
 public class ModCreativeTab {
     public static CreativeModeTab NIGHT_LIGHTS_TAB;
+
     public static void register() {
         NIGHT_LIGHTS_TAB = register(FabricItemGroup.builder()
                 .title(Component.translatable("itemGroup.nightlights"))
@@ -110,8 +111,9 @@ public class ModCreativeTab {
                 })
                 .build());
     }
+
     private static CreativeModeTab register(CreativeModeTab tab) {
-        return Registry.register(BuiltInRegistries.CREATIVE_MODE_TAB, ResourceLocation.fromNamespaceAndPath(NightLights.MODID, "nightlights"), tab);
+        return Registry.register(BuiltInRegistries.CREATIVE_MODE_TAB, new ResourceLocation(NightLights.MODID, "nightlights"), tab);
     }
 
 }

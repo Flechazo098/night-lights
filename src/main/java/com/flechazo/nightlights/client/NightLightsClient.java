@@ -2,8 +2,8 @@ package com.flechazo.nightlights.client;
 
 import com.flechazo.nightlights.init.ModBlock;
 import net.fabricmc.api.ClientModInitializer;
-import net.fabricmc.fabric.api.client.rendering.v1.BlockRenderLayerMap;
-import net.minecraft.client.renderer.chunk.ChunkSectionLayer;
+import net.fabricmc.fabric.api.blockrenderlayer.v1.BlockRenderLayerMap;
+import net.minecraft.client.renderer.RenderType;
 
 public class NightLightsClient implements ClientModInitializer {
 
@@ -11,96 +11,97 @@ public class NightLightsClient implements ClientModInitializer {
     public void onInitializeClient() {
         setRenderLayers();
     }
+
     private static void setRenderLayers() {
         // Night Light Blocks
-        BlockRenderLayerMap.putBlock(ModBlock.FROG_BLACK, ChunkSectionLayer.CUTOUT);
-        BlockRenderLayerMap.putBlock(ModBlock.FROG_BLUE, ChunkSectionLayer.CUTOUT);
-        BlockRenderLayerMap.putBlock(ModBlock.FROG_BROWN, ChunkSectionLayer.CUTOUT);
-        BlockRenderLayerMap.putBlock(ModBlock.FROG_CYAN, ChunkSectionLayer.CUTOUT);
-        BlockRenderLayerMap.putBlock(ModBlock.FROG_GRAY, ChunkSectionLayer.CUTOUT);
-        BlockRenderLayerMap.putBlock(ModBlock.FROG_GREEN, ChunkSectionLayer.CUTOUT);
-        BlockRenderLayerMap.putBlock(ModBlock.FROG_LIGHT_BLUE, ChunkSectionLayer.CUTOUT);
-        BlockRenderLayerMap.putBlock(ModBlock.FROG_LIGHT_GRAY, ChunkSectionLayer.CUTOUT);
-        BlockRenderLayerMap.putBlock(ModBlock.FROG_LIME, ChunkSectionLayer.CUTOUT);
-        BlockRenderLayerMap.putBlock(ModBlock.FROG_MAGENTA, ChunkSectionLayer.CUTOUT);
-        BlockRenderLayerMap.putBlock(ModBlock.FROG_ORANGE, ChunkSectionLayer.CUTOUT);
-        BlockRenderLayerMap.putBlock(ModBlock.FROG_PINK, ChunkSectionLayer.CUTOUT);
-        BlockRenderLayerMap.putBlock(ModBlock.FROG_PURPLE, ChunkSectionLayer.CUTOUT);
-        BlockRenderLayerMap.putBlock(ModBlock.FROG_RED, ChunkSectionLayer.CUTOUT);
-        BlockRenderLayerMap.putBlock(ModBlock.FROG_WHITE, ChunkSectionLayer.CUTOUT);
-        BlockRenderLayerMap.putBlock(ModBlock.FROG_YELLOW, ChunkSectionLayer.CUTOUT);
+        BlockRenderLayerMap.INSTANCE.putBlock(ModBlock.FROG_BLACK, RenderType.cutout());
+        BlockRenderLayerMap.INSTANCE.putBlock(ModBlock.FROG_BLUE, RenderType.cutout());
+        BlockRenderLayerMap.INSTANCE.putBlock(ModBlock.FROG_BROWN, RenderType.cutout());
+        BlockRenderLayerMap.INSTANCE.putBlock(ModBlock.FROG_CYAN, RenderType.cutout());
+        BlockRenderLayerMap.INSTANCE.putBlock(ModBlock.FROG_GRAY, RenderType.cutout());
+        BlockRenderLayerMap.INSTANCE.putBlock(ModBlock.FROG_GREEN, RenderType.cutout());
+        BlockRenderLayerMap.INSTANCE.putBlock(ModBlock.FROG_LIGHT_BLUE, RenderType.cutout());
+        BlockRenderLayerMap.INSTANCE.putBlock(ModBlock.FROG_LIGHT_GRAY, RenderType.cutout());
+        BlockRenderLayerMap.INSTANCE.putBlock(ModBlock.FROG_LIME, RenderType.cutout());
+        BlockRenderLayerMap.INSTANCE.putBlock(ModBlock.FROG_MAGENTA, RenderType.cutout());
+        BlockRenderLayerMap.INSTANCE.putBlock(ModBlock.FROG_ORANGE, RenderType.cutout());
+        BlockRenderLayerMap.INSTANCE.putBlock(ModBlock.FROG_PINK, RenderType.cutout());
+        BlockRenderLayerMap.INSTANCE.putBlock(ModBlock.FROG_PURPLE, RenderType.cutout());
+        BlockRenderLayerMap.INSTANCE.putBlock(ModBlock.FROG_RED, RenderType.cutout());
+        BlockRenderLayerMap.INSTANCE.putBlock(ModBlock.FROG_WHITE, RenderType.cutout());
+        BlockRenderLayerMap.INSTANCE.putBlock(ModBlock.FROG_YELLOW, RenderType.cutout());
 
         // Mushroom blocks
-        BlockRenderLayerMap.putBlock(ModBlock.MUSHROOM_BLACK, ChunkSectionLayer.CUTOUT);
-        BlockRenderLayerMap.putBlock(ModBlock.MUSHROOM_BLUE, ChunkSectionLayer.CUTOUT);
-        BlockRenderLayerMap.putBlock(ModBlock.MUSHROOM_BROWN, ChunkSectionLayer.CUTOUT);
-        BlockRenderLayerMap.putBlock(ModBlock.MUSHROOM_CYAN, ChunkSectionLayer.CUTOUT);
-        BlockRenderLayerMap.putBlock(ModBlock.MUSHROOM_GRAY, ChunkSectionLayer.CUTOUT);
-        BlockRenderLayerMap.putBlock(ModBlock.MUSHROOM_GREEN, ChunkSectionLayer.CUTOUT);
-        BlockRenderLayerMap.putBlock(ModBlock.MUSHROOM_LIGHT_BLUE, ChunkSectionLayer.CUTOUT);
-        BlockRenderLayerMap.putBlock(ModBlock.MUSHROOM_LIGHT_GRAY, ChunkSectionLayer.CUTOUT);
-        BlockRenderLayerMap.putBlock(ModBlock.MUSHROOM_LIME, ChunkSectionLayer.CUTOUT);
-        BlockRenderLayerMap.putBlock(ModBlock.MUSHROOM_MAGENTA, ChunkSectionLayer.CUTOUT);
-        BlockRenderLayerMap.putBlock(ModBlock.MUSHROOM_ORANGE, ChunkSectionLayer.CUTOUT);
-        BlockRenderLayerMap.putBlock(ModBlock.MUSHROOM_PINK, ChunkSectionLayer.CUTOUT);
-        BlockRenderLayerMap.putBlock(ModBlock.MUSHROOM_PURPLE, ChunkSectionLayer.CUTOUT);
-        BlockRenderLayerMap.putBlock(ModBlock.MUSHROOM_RED, ChunkSectionLayer.CUTOUT);
-        BlockRenderLayerMap.putBlock(ModBlock.MUSHROOM_WHITE, ChunkSectionLayer.CUTOUT);
-        BlockRenderLayerMap.putBlock(ModBlock.MUSHROOM_YELLOW, ChunkSectionLayer.CUTOUT);
+        BlockRenderLayerMap.INSTANCE.putBlock(ModBlock.MUSHROOM_BLACK, RenderType.cutout());
+        BlockRenderLayerMap.INSTANCE.putBlock(ModBlock.MUSHROOM_BLUE, RenderType.cutout());
+        BlockRenderLayerMap.INSTANCE.putBlock(ModBlock.MUSHROOM_BROWN, RenderType.cutout());
+        BlockRenderLayerMap.INSTANCE.putBlock(ModBlock.MUSHROOM_CYAN, RenderType.cutout());
+        BlockRenderLayerMap.INSTANCE.putBlock(ModBlock.MUSHROOM_GRAY, RenderType.cutout());
+        BlockRenderLayerMap.INSTANCE.putBlock(ModBlock.MUSHROOM_GREEN, RenderType.cutout());
+        BlockRenderLayerMap.INSTANCE.putBlock(ModBlock.MUSHROOM_LIGHT_BLUE, RenderType.cutout());
+        BlockRenderLayerMap.INSTANCE.putBlock(ModBlock.MUSHROOM_LIGHT_GRAY, RenderType.cutout());
+        BlockRenderLayerMap.INSTANCE.putBlock(ModBlock.MUSHROOM_LIME, RenderType.cutout());
+        BlockRenderLayerMap.INSTANCE.putBlock(ModBlock.MUSHROOM_MAGENTA, RenderType.cutout());
+        BlockRenderLayerMap.INSTANCE.putBlock(ModBlock.MUSHROOM_ORANGE, RenderType.cutout());
+        BlockRenderLayerMap.INSTANCE.putBlock(ModBlock.MUSHROOM_PINK, RenderType.cutout());
+        BlockRenderLayerMap.INSTANCE.putBlock(ModBlock.MUSHROOM_PURPLE, RenderType.cutout());
+        BlockRenderLayerMap.INSTANCE.putBlock(ModBlock.MUSHROOM_RED, RenderType.cutout());
+        BlockRenderLayerMap.INSTANCE.putBlock(ModBlock.MUSHROOM_WHITE, RenderType.cutout());
+        BlockRenderLayerMap.INSTANCE.putBlock(ModBlock.MUSHROOM_YELLOW, RenderType.cutout());
 
         // Octopus blocks
-        BlockRenderLayerMap.putBlock(ModBlock.OCTOPUS_BLACK, ChunkSectionLayer.CUTOUT);
-        BlockRenderLayerMap.putBlock(ModBlock.OCTOPUS_BLUE, ChunkSectionLayer.CUTOUT);
-        BlockRenderLayerMap.putBlock(ModBlock.OCTOPUS_BROWN, ChunkSectionLayer.CUTOUT);
-        BlockRenderLayerMap.putBlock(ModBlock.OCTOPUS_CYAN, ChunkSectionLayer.CUTOUT);
-        BlockRenderLayerMap.putBlock(ModBlock.OCTOPUS_GRAY, ChunkSectionLayer.CUTOUT);
-        BlockRenderLayerMap.putBlock(ModBlock.OCTOPUS_GREEN, ChunkSectionLayer.CUTOUT);
-        BlockRenderLayerMap.putBlock(ModBlock.OCTOPUS_LIGHT_BLUE, ChunkSectionLayer.CUTOUT);
-        BlockRenderLayerMap.putBlock(ModBlock.OCTOPUS_LIGHT_GRAY, ChunkSectionLayer.CUTOUT);
-        BlockRenderLayerMap.putBlock(ModBlock.OCTOPUS_LIME, ChunkSectionLayer.CUTOUT);
-        BlockRenderLayerMap.putBlock(ModBlock.OCTOPUS_MAGENTA, ChunkSectionLayer.CUTOUT);
-        BlockRenderLayerMap.putBlock(ModBlock.OCTOPUS_ORANGE, ChunkSectionLayer.CUTOUT);
-        BlockRenderLayerMap.putBlock(ModBlock.OCTOPUS_PINK, ChunkSectionLayer.CUTOUT);
-        BlockRenderLayerMap.putBlock(ModBlock.OCTOPUS_PURPLE, ChunkSectionLayer.CUTOUT);
-        BlockRenderLayerMap.putBlock(ModBlock.OCTOPUS_RED, ChunkSectionLayer.CUTOUT);
-        BlockRenderLayerMap.putBlock(ModBlock.OCTOPUS_WHITE, ChunkSectionLayer.CUTOUT);
-        BlockRenderLayerMap.putBlock(ModBlock.OCTOPUS_YELLOW, ChunkSectionLayer.CUTOUT);
+        BlockRenderLayerMap.INSTANCE.putBlock(ModBlock.OCTOPUS_BLACK, RenderType.cutout());
+        BlockRenderLayerMap.INSTANCE.putBlock(ModBlock.OCTOPUS_BLUE, RenderType.cutout());
+        BlockRenderLayerMap.INSTANCE.putBlock(ModBlock.OCTOPUS_BROWN, RenderType.cutout());
+        BlockRenderLayerMap.INSTANCE.putBlock(ModBlock.OCTOPUS_CYAN, RenderType.cutout());
+        BlockRenderLayerMap.INSTANCE.putBlock(ModBlock.OCTOPUS_GRAY, RenderType.cutout());
+        BlockRenderLayerMap.INSTANCE.putBlock(ModBlock.OCTOPUS_GREEN, RenderType.cutout());
+        BlockRenderLayerMap.INSTANCE.putBlock(ModBlock.OCTOPUS_LIGHT_BLUE, RenderType.cutout());
+        BlockRenderLayerMap.INSTANCE.putBlock(ModBlock.OCTOPUS_LIGHT_GRAY, RenderType.cutout());
+        BlockRenderLayerMap.INSTANCE.putBlock(ModBlock.OCTOPUS_LIME, RenderType.cutout());
+        BlockRenderLayerMap.INSTANCE.putBlock(ModBlock.OCTOPUS_MAGENTA, RenderType.cutout());
+        BlockRenderLayerMap.INSTANCE.putBlock(ModBlock.OCTOPUS_ORANGE, RenderType.cutout());
+        BlockRenderLayerMap.INSTANCE.putBlock(ModBlock.OCTOPUS_PINK, RenderType.cutout());
+        BlockRenderLayerMap.INSTANCE.putBlock(ModBlock.OCTOPUS_PURPLE, RenderType.cutout());
+        BlockRenderLayerMap.INSTANCE.putBlock(ModBlock.OCTOPUS_RED, RenderType.cutout());
+        BlockRenderLayerMap.INSTANCE.putBlock(ModBlock.OCTOPUS_WHITE, RenderType.cutout());
+        BlockRenderLayerMap.INSTANCE.putBlock(ModBlock.OCTOPUS_YELLOW, RenderType.cutout());
 
         // Hanging lights and fairy lights use cutout rendering
-        BlockRenderLayerMap.putBlock(ModBlock.HANGING_LIGHTS_BLACK, ChunkSectionLayer.CUTOUT);
-        BlockRenderLayerMap.putBlock(ModBlock.HANGING_LIGHTS_BLUE, ChunkSectionLayer.CUTOUT);
-        BlockRenderLayerMap.putBlock(ModBlock.HANGING_LIGHTS_BROWN, ChunkSectionLayer.CUTOUT);
-        BlockRenderLayerMap.putBlock(ModBlock.HANGING_LIGHTS_CYAN, ChunkSectionLayer.CUTOUT);
-        BlockRenderLayerMap.putBlock(ModBlock.HANGING_LIGHTS_DEFAULT, ChunkSectionLayer.CUTOUT);
-        BlockRenderLayerMap.putBlock(ModBlock.HANGING_LIGHTS_GRAY, ChunkSectionLayer.CUTOUT);
-        BlockRenderLayerMap.putBlock(ModBlock.HANGING_LIGHTS_GREEN, ChunkSectionLayer.CUTOUT);
-        BlockRenderLayerMap.putBlock(ModBlock.HANGING_LIGHTS_LIGHT_BLUE, ChunkSectionLayer.CUTOUT);
-        BlockRenderLayerMap.putBlock(ModBlock.HANGING_LIGHTS_LIGHT_GRAY, ChunkSectionLayer.CUTOUT);
-        BlockRenderLayerMap.putBlock(ModBlock.HANGING_LIGHTS_LIME, ChunkSectionLayer.CUTOUT);
-        BlockRenderLayerMap.putBlock(ModBlock.HANGING_LIGHTS_MAGENTA, ChunkSectionLayer.CUTOUT);
-        BlockRenderLayerMap.putBlock(ModBlock.HANGING_LIGHTS_ORANGE, ChunkSectionLayer.CUTOUT);
-        BlockRenderLayerMap.putBlock(ModBlock.HANGING_LIGHTS_PINK, ChunkSectionLayer.CUTOUT);
-        BlockRenderLayerMap.putBlock(ModBlock.HANGING_LIGHTS_PURPLE, ChunkSectionLayer.CUTOUT);
-        BlockRenderLayerMap.putBlock(ModBlock.HANGING_LIGHTS_RED, ChunkSectionLayer.CUTOUT);
-        BlockRenderLayerMap.putBlock(ModBlock.HANGING_LIGHTS_WHITE, ChunkSectionLayer.CUTOUT);
-        BlockRenderLayerMap.putBlock(ModBlock.HANGING_LIGHTS_YELLOW, ChunkSectionLayer.CUTOUT);
+        BlockRenderLayerMap.INSTANCE.putBlock(ModBlock.HANGING_LIGHTS_BLACK, RenderType.cutout());
+        BlockRenderLayerMap.INSTANCE.putBlock(ModBlock.HANGING_LIGHTS_BLUE, RenderType.cutout());
+        BlockRenderLayerMap.INSTANCE.putBlock(ModBlock.HANGING_LIGHTS_BROWN, RenderType.cutout());
+        BlockRenderLayerMap.INSTANCE.putBlock(ModBlock.HANGING_LIGHTS_CYAN, RenderType.cutout());
+        BlockRenderLayerMap.INSTANCE.putBlock(ModBlock.HANGING_LIGHTS_DEFAULT, RenderType.cutout());
+        BlockRenderLayerMap.INSTANCE.putBlock(ModBlock.HANGING_LIGHTS_GRAY, RenderType.cutout());
+        BlockRenderLayerMap.INSTANCE.putBlock(ModBlock.HANGING_LIGHTS_GREEN, RenderType.cutout());
+        BlockRenderLayerMap.INSTANCE.putBlock(ModBlock.HANGING_LIGHTS_LIGHT_BLUE, RenderType.cutout());
+        BlockRenderLayerMap.INSTANCE.putBlock(ModBlock.HANGING_LIGHTS_LIGHT_GRAY, RenderType.cutout());
+        BlockRenderLayerMap.INSTANCE.putBlock(ModBlock.HANGING_LIGHTS_LIME, RenderType.cutout());
+        BlockRenderLayerMap.INSTANCE.putBlock(ModBlock.HANGING_LIGHTS_MAGENTA, RenderType.cutout());
+        BlockRenderLayerMap.INSTANCE.putBlock(ModBlock.HANGING_LIGHTS_ORANGE, RenderType.cutout());
+        BlockRenderLayerMap.INSTANCE.putBlock(ModBlock.HANGING_LIGHTS_PINK, RenderType.cutout());
+        BlockRenderLayerMap.INSTANCE.putBlock(ModBlock.HANGING_LIGHTS_PURPLE, RenderType.cutout());
+        BlockRenderLayerMap.INSTANCE.putBlock(ModBlock.HANGING_LIGHTS_RED, RenderType.cutout());
+        BlockRenderLayerMap.INSTANCE.putBlock(ModBlock.HANGING_LIGHTS_WHITE, RenderType.cutout());
+        BlockRenderLayerMap.INSTANCE.putBlock(ModBlock.HANGING_LIGHTS_YELLOW, RenderType.cutout());
 
-        BlockRenderLayerMap.putBlock(ModBlock.FAIRY_LIGHTS_BLACK, ChunkSectionLayer.CUTOUT);
-        BlockRenderLayerMap.putBlock(ModBlock.FAIRY_LIGHTS_BLUE, ChunkSectionLayer.CUTOUT);
-        BlockRenderLayerMap.putBlock(ModBlock.FAIRY_LIGHTS_BROWN, ChunkSectionLayer.CUTOUT);
-        BlockRenderLayerMap.putBlock(ModBlock.FAIRY_LIGHTS_CYAN, ChunkSectionLayer.CUTOUT);
-        BlockRenderLayerMap.putBlock(ModBlock.FAIRY_LIGHTS_DEFAULT, ChunkSectionLayer.CUTOUT);
-        BlockRenderLayerMap.putBlock(ModBlock.FAIRY_LIGHTS_GRAY, ChunkSectionLayer.CUTOUT);
-        BlockRenderLayerMap.putBlock(ModBlock.FAIRY_LIGHTS_GREEN, ChunkSectionLayer.CUTOUT);
-        BlockRenderLayerMap.putBlock(ModBlock.FAIRY_LIGHTS_LIGHT_BLUE, ChunkSectionLayer.CUTOUT);
-        BlockRenderLayerMap.putBlock(ModBlock.FAIRY_LIGHTS_LIGHT_GRAY, ChunkSectionLayer.CUTOUT);
-        BlockRenderLayerMap.putBlock(ModBlock.FAIRY_LIGHTS_LIME, ChunkSectionLayer.CUTOUT);
-        BlockRenderLayerMap.putBlock(ModBlock.FAIRY_LIGHTS_MAGENTA, ChunkSectionLayer.CUTOUT);
-        BlockRenderLayerMap.putBlock(ModBlock.FAIRY_LIGHTS_ORANGE, ChunkSectionLayer.CUTOUT);
-        BlockRenderLayerMap.putBlock(ModBlock.FAIRY_LIGHTS_PINK, ChunkSectionLayer.CUTOUT);
-        BlockRenderLayerMap.putBlock(ModBlock.FAIRY_LIGHTS_PURPLE, ChunkSectionLayer.CUTOUT);
-        BlockRenderLayerMap.putBlock(ModBlock.FAIRY_LIGHTS_RED, ChunkSectionLayer.CUTOUT);
-        BlockRenderLayerMap.putBlock(ModBlock.FAIRY_LIGHTS_WHITE, ChunkSectionLayer.CUTOUT);
-        BlockRenderLayerMap.putBlock(ModBlock.FAIRY_LIGHTS_YELLOW, ChunkSectionLayer.CUTOUT);
+        BlockRenderLayerMap.INSTANCE.putBlock(ModBlock.FAIRY_LIGHTS_BLACK, RenderType.cutout());
+        BlockRenderLayerMap.INSTANCE.putBlock(ModBlock.FAIRY_LIGHTS_BLUE, RenderType.cutout());
+        BlockRenderLayerMap.INSTANCE.putBlock(ModBlock.FAIRY_LIGHTS_BROWN, RenderType.cutout());
+        BlockRenderLayerMap.INSTANCE.putBlock(ModBlock.FAIRY_LIGHTS_CYAN, RenderType.cutout());
+        BlockRenderLayerMap.INSTANCE.putBlock(ModBlock.FAIRY_LIGHTS_DEFAULT, RenderType.cutout());
+        BlockRenderLayerMap.INSTANCE.putBlock(ModBlock.FAIRY_LIGHTS_GRAY, RenderType.cutout());
+        BlockRenderLayerMap.INSTANCE.putBlock(ModBlock.FAIRY_LIGHTS_GREEN, RenderType.cutout());
+        BlockRenderLayerMap.INSTANCE.putBlock(ModBlock.FAIRY_LIGHTS_LIGHT_BLUE, RenderType.cutout());
+        BlockRenderLayerMap.INSTANCE.putBlock(ModBlock.FAIRY_LIGHTS_LIGHT_GRAY, RenderType.cutout());
+        BlockRenderLayerMap.INSTANCE.putBlock(ModBlock.FAIRY_LIGHTS_LIME, RenderType.cutout());
+        BlockRenderLayerMap.INSTANCE.putBlock(ModBlock.FAIRY_LIGHTS_MAGENTA, RenderType.cutout());
+        BlockRenderLayerMap.INSTANCE.putBlock(ModBlock.FAIRY_LIGHTS_ORANGE, RenderType.cutout());
+        BlockRenderLayerMap.INSTANCE.putBlock(ModBlock.FAIRY_LIGHTS_PINK, RenderType.cutout());
+        BlockRenderLayerMap.INSTANCE.putBlock(ModBlock.FAIRY_LIGHTS_PURPLE, RenderType.cutout());
+        BlockRenderLayerMap.INSTANCE.putBlock(ModBlock.FAIRY_LIGHTS_RED, RenderType.cutout());
+        BlockRenderLayerMap.INSTANCE.putBlock(ModBlock.FAIRY_LIGHTS_WHITE, RenderType.cutout());
+        BlockRenderLayerMap.INSTANCE.putBlock(ModBlock.FAIRY_LIGHTS_YELLOW, RenderType.cutout());
     }
 }

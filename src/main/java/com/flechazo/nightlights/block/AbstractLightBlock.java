@@ -3,6 +3,7 @@ package com.flechazo.nightlights.block;
 import net.minecraft.core.BlockPos;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.sounds.SoundSource;
+import net.minecraft.world.InteractionHand;
 import net.minecraft.world.InteractionResult;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.level.Level;
@@ -12,6 +13,7 @@ import net.minecraft.world.level.block.state.properties.BooleanProperty;
 import net.minecraft.world.level.block.state.properties.IntegerProperty;
 import net.minecraft.world.phys.BlockHitResult;
 import org.jetbrains.annotations.NotNull;
+
 public abstract class AbstractLightBlock extends Block {
     public static final IntegerProperty BRIGHTNESS = IntegerProperty.create("brightness", 0, 15);
     public static final BooleanProperty LIT = BooleanProperty.create("lit");
@@ -24,15 +26,17 @@ public abstract class AbstractLightBlock extends Block {
 
     @Override
     @NotNull
-    protected InteractionResult useWithoutItem(BlockState state, Level level, BlockPos pos, Player player, BlockHitResult hitResult) {
-        if (!level.isClientSide()) {
-            if (isAdjustable()) {
-                handleLightInteraction(state, level, pos);
-            } else {
-                handleFixedLightInteraction(state, level, pos);
+    public InteractionResult use(BlockState state, Level level, BlockPos pos, Player player, InteractionHand hand, BlockHitResult hitResult) {
+        if (!level.isClientSide) {
+            if (hand == InteractionHand.MAIN_HAND) {
+                if (isAdjustable()) {
+                    handleLightInteraction(state, level, pos);
+                } else {
+                    handleFixedLightInteraction(state, level, pos);
+                }
             }
         }
-        return InteractionResult.SUCCESS;
+        return InteractionResult.sidedSuccess(level.isClientSide);
     }
 
     protected void handleLightInteraction(BlockState state, Level level, BlockPos pos) {
@@ -67,6 +71,7 @@ public abstract class AbstractLightBlock extends Block {
             }
         }
     }
+
     protected void handleFixedLightInteraction(BlockState state, Level level, BlockPos pos) {
         boolean isLit = state.getValue(LIT);
 

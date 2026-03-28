@@ -4,11 +4,14 @@ import com.google.common.collect.ImmutableMap;
 import com.google.common.collect.Maps;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
-import net.minecraft.util.RandomSource;
+import net.minecraft.world.InteractionHand;
 import net.minecraft.world.InteractionResult;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.context.BlockPlaceContext;
-import net.minecraft.world.level.*;
+import net.minecraft.world.level.BlockGetter;
+import net.minecraft.world.level.Level;
+import net.minecraft.world.level.LevelAccessor;
+import net.minecraft.world.level.LevelReader;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.Rotation;
@@ -42,12 +45,12 @@ public class CeilingLightBlock extends AbstractLightBlock {
 
     @Override
     @NotNull
-    protected VoxelShape getShape(BlockState state, BlockGetter level, BlockPos pos, CollisionContext context) {
+    public VoxelShape getShape(BlockState state, BlockGetter level, BlockPos pos, CollisionContext context) {
         return SHAPES.get(state.getValue(FACING));
     }
 
     @Override
-    protected boolean canSurvive(BlockState state, LevelReader level, BlockPos pos) {
+    public boolean canSurvive(BlockState state, LevelReader level, BlockPos pos) {
         BlockPos above = pos.above();
         return canSupportRigidBlock(level, above) ||
                 (canSupportCenter(level, above, Direction.DOWN) && !level.isEmptyBlock(above));
@@ -62,21 +65,20 @@ public class CeilingLightBlock extends AbstractLightBlock {
     }
 
     @Override
-    @NotNull
-    protected InteractionResult useWithoutItem(BlockState state, Level level, BlockPos pos, Player player, BlockHitResult hitResult) {
+    public @NotNull InteractionResult use(BlockState state, Level level, BlockPos pos, Player player, InteractionHand hand, BlockHitResult hitResult) {
         return InteractionResult.SUCCESS;
     }
 
+
     @Override
-    @NotNull
-    protected BlockState updateShape(BlockState state, LevelReader level, ScheduledTickAccess scheduledTickAccess, BlockPos pos, Direction direction, BlockPos neighborPos, BlockState neighborState, RandomSource random) {
-        return !state.canSurvive(level, pos) ? Blocks.AIR.defaultBlockState() :
-                super.updateShape(state, level, scheduledTickAccess, pos, direction, neighborPos, neighborState, random);
+    public BlockState updateShape(BlockState blockState, Direction direction, BlockState blockState2, LevelAccessor levelAccessor, BlockPos blockPos, BlockPos blockPos2) {
+        return !blockState.canSurvive(levelAccessor, blockPos) ? Blocks.AIR.defaultBlockState() :
+                super.updateShape(blockState, direction, blockState2, levelAccessor, blockPos, blockPos2);
     }
 
     @Override
     @NotNull
-    protected BlockState rotate(BlockState state, Rotation rotation) {
+    public BlockState rotate(BlockState state, Rotation rotation) {
         return state.setValue(FACING, rotation.rotate(state.getValue(FACING)));
     }
 

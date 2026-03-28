@@ -1,6 +1,5 @@
 package com.flechazo.nightlights.init;
 
-import com.flechazo.nightlights.NightLights;
 import com.flechazo.nightlights.block.CeilingLightBlock;
 import com.flechazo.nightlights.block.NightLightFrogBlock;
 import com.flechazo.nightlights.block.NightLightMushroomBlock;
@@ -8,9 +7,6 @@ import com.flechazo.nightlights.block.NightLightOctopusBlock;
 import com.flechazo.nightlights.util.RegisterHelper;
 import net.minecraft.core.Registry;
 import net.minecraft.core.registries.BuiltInRegistries;
-import net.minecraft.core.registries.Registries;
-import net.minecraft.resources.ResourceKey;
-import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.SoundType;
@@ -109,36 +105,35 @@ public class ModBlock {
     public static final Block FAIRY_LIGHTS_YELLOW = registerCeilingLight("fairy_lights_yellow");
 
     private static Block registerNightLight(String name) {
-        ResourceKey<Block> blockKey = RegisterHelper.blockKey(name);
 
         Block block;
         if (name.startsWith("frog_")) {
             block = new NightLightFrogBlock(
-                    BlockBehaviour.Properties.ofFullCopy(Blocks.FLOWER_POT)
+                    BlockBehaviour.Properties.copy(Blocks.FLOWER_POT)
                             .noOcclusion()
                             .sound(SoundType.GLASS)
-                            .setId(blockKey)
+
             );
         } else if (name.startsWith("mushroom_")) {
             block = new NightLightMushroomBlock(
-                    BlockBehaviour.Properties.ofFullCopy(Blocks.FLOWER_POT)
+                    BlockBehaviour.Properties.copy(Blocks.FLOWER_POT)
                             .noOcclusion()
                             .sound(SoundType.GLASS)
-                            .setId(blockKey)
+
             );
         } else if (name.startsWith("octopus_")) {
             block = new NightLightOctopusBlock(
-                    BlockBehaviour.Properties.ofFullCopy(Blocks.FLOWER_POT)
+                    BlockBehaviour.Properties.copy(Blocks.FLOWER_POT)
                             .noOcclusion()
                             .sound(SoundType.GLASS)
-                            .setId(blockKey)
+
             );
         } else {
             block = new NightLightFrogBlock(
-                    BlockBehaviour.Properties.ofFullCopy(Blocks.FLOWER_POT)
+                    BlockBehaviour.Properties.copy(Blocks.FLOWER_POT)
                             .noOcclusion()
                             .sound(SoundType.GLASS)
-                            .setId(blockKey)
+
             );
         }
 
@@ -146,19 +141,18 @@ public class ModBlock {
     }
 
     private static Block registerCeilingLight(String name) {
-        ResourceKey<Block> blockKey = RegisterHelper.blockKey(name);
 
         Block block = new CeilingLightBlock(
-                BlockBehaviour.Properties.ofFullCopy(Blocks.FLOWER_POT)
+                BlockBehaviour.Properties.copy(Blocks.FLOWER_POT)
                         .noOcclusion()
                         .sound(SoundType.GLASS)
                         .noCollission()
                         .instabreak()
-                        .setId(blockKey)
         );
 
         return Registry.register(BuiltInRegistries.BLOCK, RegisterHelper.id(name), block);
     }
+
     public static void init() {
     }
 }

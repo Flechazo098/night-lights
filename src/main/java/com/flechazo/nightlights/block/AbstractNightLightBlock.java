@@ -26,7 +26,7 @@ public abstract class AbstractNightLightBlock extends AbstractLightBlock {
     }
 
     @Override
-    protected boolean canSurvive(BlockState state, LevelReader level, BlockPos pos) {
+    public boolean canSurvive(BlockState state, LevelReader level, BlockPos pos) {
         BlockPos below = pos.below();
         return canSupportRigidBlock(level, below) || canSupportCenter(level, below, Direction.UP);
     }
@@ -46,7 +46,7 @@ public abstract class AbstractNightLightBlock extends AbstractLightBlock {
 
     @Override
     @NotNull
-    protected VoxelShape getShape(BlockState state, BlockGetter level, BlockPos pos, CollisionContext context) {
+    public VoxelShape getShape(BlockState state, BlockGetter level, BlockPos pos, CollisionContext context) {
         return getShapeForType();
     }
 

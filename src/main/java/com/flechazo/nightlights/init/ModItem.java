@@ -4,8 +4,6 @@ import com.flechazo.nightlights.item.WearableBlockItem;
 import com.flechazo.nightlights.util.RegisterHelper;
 import net.minecraft.core.Registry;
 import net.minecraft.core.registries.BuiltInRegistries;
-import net.minecraft.core.registries.Registries;
-import net.minecraft.resources.ResourceKey;
 import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.level.block.Block;
@@ -103,12 +101,12 @@ public class ModItem {
 
     private static Item registerWearableBlockItem(String name, Block block) {
         return Registry.register(BuiltInRegistries.ITEM, RegisterHelper.id(name),
-                new WearableBlockItem(block, new Item.Properties().setId(RegisterHelper.itemKey(name))));
+                new WearableBlockItem(block, new Item.Properties()));
     }
 
     private static Item registerBlockItem(String name, Block block) {
         return Registry.register(BuiltInRegistries.ITEM, RegisterHelper.id(name),
-                new BlockItem(block, new Item.Properties().setId(RegisterHelper.itemKey(name))));
+                new BlockItem(block, new Item.Properties()));
     }
 
     public static void init() {
